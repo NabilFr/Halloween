@@ -1,0 +1,178 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:900|Creepster);
+
+@font-face {
+   font-family: "Creepy";
+   src: url("Assets/Fonts/Creepy.woff") format("woff"),
+        url("Assets/Fonts/Creepy.woff2") format("woff2");
+}
+
+@font-face {
+   font-family: "Lunacy";
+   src: url("Assets/Fonts/Lunacy.woff") format("woff"),
+        url("Assets/Fonts/Lunacy.woff2") format("woff2");
+}
+
+* {
+   box-sizing: border-box;
+}
+
+body{
+   margin: 0;
+   background: url("Assets/Images/back.png") no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+html {
+   min-height: 100vh;
+   cursor: url("Assets/Cursors/Ghost.cur"), auto;
+}
+
+.page-title {
+   font: 6em Creepster, Helvetica, sans-serif;
+   background-image: linear-gradient(to bottom, #FF6D00 0%, #8849a3 100%);
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+   color: #fff;
+   text-align: center;
+}
+.game-info-container {
+   grid-column: 1 / -1;
+   display: flex;
+   justify-content: space-between;
+}
+
+.game-info {
+   font-family: Lunacy, serif;
+   color: #FF6D00;
+   font-size: 4em;
+}
+
+.game-container {
+   display: grid;
+   grid-template-columns: repeat(4,auto);
+   grid-gap: 10px;
+   margin: 50px;
+   justify-content: center;
+   perspective: 500px;
+}
+
+.card {
+   position: relative;
+   height: 175px;
+   width: 125px;
+}
+
+.card:hover {
+   cursor: url("Assets/Cursors/GhostHover.cur"), auto;
+}
+
+.card-face {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   backface-visibility: hidden;
+   border-radius: 12px;
+   border-width: 1px;
+   border-style: solid;
+   transition: transform 500ms ease-in-out;
+}
+
+.card.visible .card-back {
+   transform: rotateY(-180deg); 
+ }
+ 
+ .card.visible .card-front {
+   transform: rotateY(0); 
+ }
+
+ .card.matched .card-value {
+    animation: dance 2s linear infinite 500ms;
+ }
+
+ @keyframes dance {
+    0%, 100% {
+       transform: scale(1);
+    }
+    25% {
+       transform: scale(1);
+    }
+    75% {
+       transform: scale(1.1);
+    }
+ }
+ 
+ .card-back {
+   background-color: black;
+   border-color: #FF6D00;
+   transform: rotateY(0); 
+ }
+
+.card-front {
+   background-color: rgb(0, 0, 0);
+   transform: rotateY(180deg); 
+ }
+
+ .card-value {
+   transition: transform 100ms ease-in-out;
+   transform: scale(0.97);
+   height: 100%;
+   width: 100%;
+   border-radius: 12px;
+ }
+ .card-front:hover .card-value {
+    transform: scale(1);
+ }
+
+.cob-web {
+   position: absolute;
+   transition: width 100ms ease-in-out, height 100ms ease-in-out;
+   width: 47px;
+   height: 47px;
+ }
+
+ 
+ 
+ .card-face:hover .cob-web {
+   width: 52px;
+   height: 52px;
+ }
+
+.cob-web-top-left {
+   transform: rotate(270deg);
+   top: 0;
+   left: 0;
+ }
+ 
+ .cob-web-top-right {
+   top: 0;
+   right: 0;
+ }
+ 
+ .cob-web-bottom-left {
+   transform: rotate(180deg);
+   bottom: 0;
+   left: 0;
+ }
+ 
+ .cob-web-bottom-right {
+   transform: rotate(90deg);
+   bottom: 0;
+   right: 0;
+ }
+ 
+ .spider {
+   align-self: flex-start;
+   transition: transform 100ms ease-in-out;
+   transform: translateY(-10px);
+ }
+
+ .card-back:hover .spider {
+    transform: translateY(0);
+ }
