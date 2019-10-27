@@ -76,11 +76,11 @@ body {
 }
 
 .card.visible .card-back {
-  transform: rotateY(-180deg);
+  transform: rotateY(-180deg); 
 }
 
 .card.visible .card-front {
-  transform: rotateY(0);
+  transform: rotateY(0); 
 }
 
 .card.matched .card-front .card-value {
@@ -93,19 +93,11 @@ body {
   transform: rotateY(0); 
 }
 
-.card-front {
-  transform: rotateY(180deg); 
-}
-
 .cob-web {
   position: absolute;
   transition: width 100ms ease-in-out, height 100ms ease-in-out;
   width: 47px;
   height: 47px;
-}
-
-.card-back:hover .cob-web {
-
 }
 
 .card-face:hover .cob-web {
@@ -220,3 +212,28 @@ body {
     align-items: center;
   }
 }
+
+a.button1{
+   display:inline-block;
+   padding:0.35em 1.2em;
+   border:0.1em solid #FFFFFF;
+   margin:0 0.3em 0.3em 0;
+   border-radius:0.12em;
+   box-sizing: border-box;
+   text-decoration:none;
+   font-family:'Roboto',sans-serif;
+   font-weight:300;
+   color:#FFFFFF;
+   text-align:center;
+   transition: all 0.2s;
+  }
+  a.button1:hover{
+   color:#000000;
+   background-color:#FFFFFF;
+  }
+  @media all and (max-width:30em){
+   a.button1{
+    display:block;
+    margin:0.4em auto;
+   }
+  } 
